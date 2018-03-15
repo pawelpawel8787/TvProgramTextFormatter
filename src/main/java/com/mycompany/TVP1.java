@@ -9,12 +9,12 @@ public class TVP1 {
     public static void main(String[] args) throws Exception {
 
             String path = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\input\\TVP1.txt";
-            String pathOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP1_1.txt";
-            String pathOut2 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP1_2.txt";
-            String pathOut3 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP1_3.txt";
-            String pathOut4 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP1_4.txt";
-            String pathOut5 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP1_5.txt";
-            String pathOut6 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP1_6.txt";
+            String pathOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP1_1.txt";
+            String pathOut2 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP1_2.txt";
+            String pathOut3 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP1_3.txt";
+            String pathOut4 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP1_4.txt";
+            String pathOut5 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP1_5.txt";
+            String pathOut6 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP1_6.txt";
             String finalOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\finalTVP1.txt";
             BufferedReader reader = null;
             BufferedWriter writer = null;

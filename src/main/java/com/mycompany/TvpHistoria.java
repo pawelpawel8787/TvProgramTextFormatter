@@ -5,18 +5,18 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class MainTvpHistoria {
+public class TvpHistoria {
 
     public static void main(String[] args) throws IOException {
 
         String path = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\input\\TVP Historia.txt";
-        String pathOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP Historia1.txt";
-        String pathOut2 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP Historia2.txt";
-        String pathOut3 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP Historia3.txt";
-        String pathOut4 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP Historia4.txt";
-        String pathOut5 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP Historia5.txt";
-        String pathOut6 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP Historia6.txt";
-        String pathOut7 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\finalTVP Historia7.txt";
+        String pathOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP Historia1.txt";
+        String pathOut2 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP Historia2.txt";
+        String pathOut3 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP Historia3.txt";
+        String pathOut4 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP Historia4.txt";
+        String pathOut5 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP Historia5.txt";
+        String pathOut6 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP Historia6.txt";
+        String pathOut7 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\finalTVP Historia.txt";
         BufferedReader reader = null;
         BufferedWriter writer = null;
 
@@ -64,7 +64,7 @@ public class MainTvpHistoria {
             while ((line2 = reader.readLine()) != null) {
 
                 Pattern pattern = Pattern.compile("odc. ([0-9]{1,3})/([0-9]{1,3}) ");
-                Pattern pattern2 = Pattern.compile("odc. ([0-9]{1,3}) ");
+                Pattern pattern2 = Pattern.compile("odc. ([0-9]{1,3})");
 
                 Matcher matcher = pattern.matcher(line2);
                 Matcher matcher2 = pattern2.matcher(line2);
@@ -218,11 +218,19 @@ public class MainTvpHistoria {
                 if (matcher.find()) {
                     writer.write(line6
                             .replace(matcher.group(), "," + matcher.group())
+                            .replace("- . ", "- " + matcher.group())
+                            .replace("-  -", "-")
+                            .replace(". -", " -")
+                            .replace("-  ", "- ")
                     );
                 }
                 else {
                     writer.write(line6
                             .replace("", "")
+                            .replace("- . ", "- ")
+                            .replace("-  -", "-")
+                            .replace(". -", " -")
+                            .replace("-  ", "- ")
                     );
                 }
                 writer.append("\n");

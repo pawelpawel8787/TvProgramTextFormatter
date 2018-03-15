@@ -9,8 +9,8 @@ public class TVPInfo {
     public static void main(String[] args) throws Exception{
 
         String path = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\input\\TVP Info.txt";
-        String pathOut1 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP Info1.txt";
-        String pathOut2 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP Info2.txt";
+        String pathOut1 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP Info1.txt";
+        String pathOut2 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP Info2.txt";
         String finalOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\finalTVP Info.txt";
         BufferedReader reader = null;
         BufferedWriter writer = null;

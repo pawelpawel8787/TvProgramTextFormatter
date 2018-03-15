@@ -2,15 +2,15 @@ package com.mycompany;
 
 import java.io.*;
 
-public class MainTvpABC {
+public class TvpABC {
 
     public static void main(String[] args) throws IOException, ArrayIndexOutOfBoundsException {
 
         String sciezka = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\input\\TVP ABC.txt";
-        String sciezkaOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP ABC.txt";
-        String sciezkaOut2 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP ABC2.txt";
-        String sciezkaOut3 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP ABC3.txt";
-        String sciezkaOut4 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\outputTVP ABC4.txt";
+        String sciezkaOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP ABC.txt";
+        String sciezkaOut2 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP ABC2.txt";
+        String sciezkaOut3 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP ABC3.txt";
+        String sciezkaOut4 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\finalTVP ABC.txt";
         BufferedReader reader = null;
         BufferedWriter writer = null;
 
