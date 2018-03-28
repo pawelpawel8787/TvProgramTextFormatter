@@ -119,20 +119,15 @@ public class TV4 {
                     writer.write(line1
                             .replace(line1, line1.substring(0, 5) + "\t" + "Cafe Futbol")
                     );
-                }
-                else if (line1.contains("Anthony Bourdain")) {
+                } else if (line1.contains("Anthony Bourdain")) {
                     writer.write(line1
                             .replace(line1, line1.substring(0, 5) + "\t" + "Anthony Bourdain")
                     );
-                }
-                else if (line1.contains(" i audiodeskrypcja")) {
+                } else if (line1.contains(" i audiodeskrypcja")) {
                     writer.write(line1
                             .replace(line1, "")
                     );
-                }
-
-
-                else {
+                } else {
                     writer.write(line1
                             .replace("", ""));
                 }
@@ -162,13 +157,11 @@ public class TV4 {
                     writer.write(line3
                             .replace("", ""));
 
-                } else if (line3.length() > 200){
+                } else if (line3.length() > 200) {
 
                     writer.write(line3
                             .replace(line3, ""));
-                }
-
-                else {
+                } else {
                     writer.write(line3
                             .replace("", "")
                             .replace(" - US\tAnthony Bourdain", "")
@@ -215,9 +208,6 @@ public class TV4 {
                 writer2.close();
             }
         }
-
-
-
 
 
     }
