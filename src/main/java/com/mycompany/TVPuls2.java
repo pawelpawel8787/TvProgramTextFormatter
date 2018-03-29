@@ -141,11 +141,11 @@ public class TVPuls2 {
                     writer.write(line1
                             .replace(line1, line1.substring(0, 5) + "\t" + "Alvinnn!!! I wiewiórki - animacja")
                     );
-                }else if (line1.contains("Niech żyje")) {
+                } else if (line1.contains("Niech żyje")) {
                     writer.write(line1
                             .replace(line1, line1.substring(0, 5) + "\t" + "Niech żyje król Julian - animacja")
                     );
-                }else if (line1.contains("Pingwiny z Madagaskaru")) {
+                } else if (line1.contains("Pingwiny z Madagaskaru")) {
                     writer.write(line1
                             .replace(line1, line1.substring(0, 5) + "\t" + "Pingwiny z Madagaskaru - animacja")
                     );
@@ -153,11 +153,11 @@ public class TVPuls2 {
                     writer.write(line1
                             .replace(line1, line1.substring(0, 5) + "\t" + "Lombard. Życie pod zastaw")
                     );
-                }  else if (line1.contains("Agenci NCIS")) {
+                } else if (line1.contains("Agenci NCIS")) {
                     writer.write(line1
                             .replace(line1, line1.substring(0, 5) + "\t" + "Agenci NCIS - fabularny")
                     );
-                }  else if (line1.contains("Przytul mnie")) {
+                } else if (line1.contains("Przytul mnie")) {
                     writer.write(line1
                             .replace(line1, line1.substring(0, 5) + "\t" + "Przytul mnie - animacja")
                     );
@@ -213,9 +213,7 @@ public class TVPuls2 {
                     writer.write(line1
                             .replace(line1, line1.substring(0, 5) + "\t" + "Top Gear - motoryzacyjny")
                     );
-                }
-
-                else {
+                } else {
                     writer.write(line1
                             .replace("", ""));
                 }
@@ -273,7 +271,7 @@ public class TVPuls2 {
 
 
             while ((reader2.hasNext())) {
-                String line2 = reader2.nextLine();
+                String line2 = reader2.nextLine().trim();
 
                 if (!line2.isEmpty()) {
                     writer2.write(line2);
@@ -302,10 +300,9 @@ public class TVPuls2 {
 
 
                 Pattern pattern4 = Pattern.compile("\\((.*)\\)");
+                Matcher matcher4 = pattern4.matcher(line2);
 
-                 Matcher matcher4 = pattern4.matcher(line2);
-
-               if (matcher4.find()) {
+                if (matcher4.find()) {
                     writer.write(line2
                             .replace(matcher4.group(), "")
                     );

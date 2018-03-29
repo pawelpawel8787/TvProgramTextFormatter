@@ -30,10 +30,6 @@ public class TV4 {
             while ((line1 = reader.readLine()) != null) {
 
 
-                Pattern pattern = Pattern.compile("([0-9]{1,2}):([0-9]{1,2})");
-                Matcher matcher = pattern.matcher(line1);
-
-
                 if (line1.contains("Detektywi w Akcji")) {
                     writer.write(line1
                             .replace(line1, line1.substring(0, 5) + "\t" + "Detektywi w akcji - serial kryminalny prod. Polska")
@@ -190,7 +186,7 @@ public class TV4 {
 
 
             while ((reader2.hasNext())) {
-                String line2 = reader2.nextLine();
+                String line2 = reader2.nextLine().trim();
 
                 if (!line2.isEmpty()) {
                     writer2.write(line2);
