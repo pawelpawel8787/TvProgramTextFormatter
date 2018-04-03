@@ -192,12 +192,14 @@ public class TVP2 {
                 Pattern pattern4 = Pattern.compile("([0-9]{1,4}/[0-9]{1,4}) - ");
                 Pattern pattern5 = Pattern.compile(" ([0-9]{1,4})' ");
                 Pattern pattern6 = Pattern.compile(" -, ([0-9]){1,2}");
+                Pattern pattern7 = Pattern.compile(" sezon ([0-9]){1,2}");
                 Matcher matcher = pattern.matcher(line5);
                 Matcher matcher2 = pattern2.matcher(line5);
                 Matcher matcher3 = pattern3.matcher(line5);
                 Matcher matcher4 = pattern4.matcher(line5);
                 Matcher matcher5 = pattern5.matcher(line5);
                 Matcher matcher6 = pattern6.matcher(line5);
+                Matcher matcher7 = pattern7.matcher(line5);
 
                 if (matcher.find()) {
                     writer.write(line5
@@ -219,6 +221,9 @@ public class TVP2 {
                 } else if (matcher6.find()){
                     writer.write(line5
                             .replace(matcher6.group(), ""));
+                } else if (matcher7.find()){
+                    writer.write(line5
+                            .replace(matcher7.group(), ""));
                 }
                 else {
                     writer.write(line5
@@ -247,7 +252,15 @@ public class TVP2 {
 
             while ((line6 = reader.readLine()) != null) {
                 Pattern pattern = Pattern.compile(", [0-9]{1,3} -");
+                Pattern pattern2 = Pattern.compile(" - /[0-9]{1,3}");
+                Pattern pattern3 = Pattern.compile(" \\((.*)\\), ");
+                Pattern pattern4 = Pattern.compile("s. (.*), - ");
+                Pattern pattern5 = Pattern.compile("s. (.*) - ");
                 Matcher matcher = pattern.matcher(line6);
+                Matcher matcher2 = pattern2.matcher(line6);
+                Matcher matcher3 = pattern3.matcher(line6);
+                Matcher matcher4 = pattern4.matcher(line6);
+                Matcher matcher5 = pattern5.matcher(line6);
 
                 if (matcher.find()) {
                     writer.write(line6
@@ -256,7 +269,23 @@ public class TVP2 {
                             .replace("  JM -", "")
                             .replace("  ", " ")
                     );
-                } else {
+                } else if (matcher2.find()){
+                    writer.write(line6
+                            .replace(matcher2.group(), ""));
+                }
+                else if (matcher3.find()){
+                    writer.write(line6
+                            .replace(matcher3.group(), ""));
+                }
+                else if (matcher4.find()){
+                    writer.write(line6
+                            .replace(matcher4.group(), ""));
+                }
+                else if (matcher5.find()){
+                    writer.write(line6
+                            .replace(matcher5.group(), ""));
+                }
+                else {
                     writer.write(line6
                             .replace("", "")
                             .replace("  ed. 3 -", "")
@@ -291,10 +320,12 @@ public class TVP2 {
                 if (matcher.find()) {
                     writer.write(line7
                             .replace(matcher.group(), matcher.group().substring(0, matcher.group().length() - 1) + "\t")
+                            .replace("Kuli", "Kulisy - Postaw na milion")
                     );
                 } else {
                     writer.write(line7
                             .replace("", "")
+                            .replace("Kuli", "Kulisy - Postaw na milion")
                     );
                 }
                 writer.append("\n");
@@ -324,10 +355,12 @@ public class TVP2 {
                 if (matcher.find()) {
                     writer.write(line8
                             .replace(matcher.group(), matcher.group().substring(0, matcher.group().length() - 1) + "\t")
+                            .replace("milionfelieton" , "milion")
                     );
                 } else {
                     writer.write(line8
                             .replace("", "")
+                            .replace("milionfelieton" , "milion")
                     );
                 }
                 writer.append("\n");
