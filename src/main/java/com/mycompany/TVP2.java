@@ -15,6 +15,7 @@ public class TVP2 {
         String pathOut4 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP2_4.txt";
         String pathOut5 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP2_5.txt";
         String pathOut6 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP2_6.txt";
+        String pathOut7 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTVP2_7.txt";
         String finalOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\finalTVP2.txt";
         BufferedReader reader = null;
         BufferedWriter writer = null;
@@ -190,11 +191,13 @@ public class TVP2 {
                 Pattern pattern3 = Pattern.compile("Odc ([0-9]{1,4}/[0-9]{1,4}) - ");
                 Pattern pattern4 = Pattern.compile("([0-9]{1,4}/[0-9]{1,4}) - ");
                 Pattern pattern5 = Pattern.compile(" ([0-9]{1,4})' ");
+                Pattern pattern6 = Pattern.compile(" -, ([0-9]){1,2}");
                 Matcher matcher = pattern.matcher(line5);
                 Matcher matcher2 = pattern2.matcher(line5);
                 Matcher matcher3 = pattern3.matcher(line5);
                 Matcher matcher4 = pattern4.matcher(line5);
                 Matcher matcher5 = pattern5.matcher(line5);
+                Matcher matcher6 = pattern6.matcher(line5);
 
                 if (matcher.find()) {
                     writer.write(line5
@@ -213,6 +216,9 @@ public class TVP2 {
                 } else if (matcher5.find()){
                     writer.write(line5
                             .replace(matcher5.group(), ""));
+                } else if (matcher6.find()){
+                    writer.write(line5
+                            .replace(matcher6.group(), ""));
                 }
                 else {
                     writer.write(line5
@@ -274,7 +280,7 @@ public class TVP2 {
 
         try {
             reader = new BufferedReader(new FileReader(pathOut6));
-            writer = new BufferedWriter(new FileWriter(finalOut));
+            writer = new BufferedWriter(new FileWriter(pathOut7));
 
             String line7;
 
@@ -288,6 +294,39 @@ public class TVP2 {
                     );
                 } else {
                     writer.write(line7
+                            .replace("", "")
+                    );
+                }
+                writer.append("\n");
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                reader.close();
+            }
+            if (writer != null) {
+                writer.close();
+            }
+        }
+
+        try {
+            reader = new BufferedReader(new FileReader(pathOut7));
+            writer = new BufferedWriter(new FileWriter(finalOut));
+
+            String line8;
+
+            while ((line8 = reader.readLine()) != null) {
+                Pattern pattern = Pattern.compile("([0-9]{1,2}:[0-9]{1,2}) ");
+                Matcher matcher = pattern.matcher(line8);
+
+                if (matcher.find()) {
+                    writer.write(line8
+                            .replace(matcher.group(), matcher.group().substring(0, matcher.group().length() - 1) + "\t")
+                    );
+                } else {
+                    writer.write(line8
                             .replace("", "")
                     );
                 }

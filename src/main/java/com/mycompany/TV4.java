@@ -12,8 +12,6 @@ public class TV4 {
         String path = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\input\\TV4.txt";
         String pathOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTV4_1.txt";
         String pathOut2 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTV4_2.txt";
-        String pathOut3 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTV4_3.txt";
-        String pathOut4 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTV4_3.txt";
         String finalOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\finalTV4.txt";
         BufferedReader reader = null;
         BufferedWriter writer = null;

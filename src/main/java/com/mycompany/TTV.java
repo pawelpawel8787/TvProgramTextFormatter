@@ -11,10 +11,6 @@ public class TTV {
         String path = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\input\\TTV.txt";
         String pathOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTTV_1.txt";
         String pathOut2 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTTV_2.txt";
-        String pathOut3 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTTV_3.txt";
-        String pathOut4 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTTV_4.txt";
-        String pathOut5 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTTV_5.txt";
-        String pathOut6 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTTV_6.txt";
         String finalOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\finalTTV.txt";
         BufferedReader reader = null;
         BufferedWriter writer = null;

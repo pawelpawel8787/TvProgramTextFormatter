@@ -13,7 +13,6 @@ public class StopklatkaTV {
         String pathOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputStopklatka TV_1.txt";
         String pathOut2 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputStopklatka TV_2.txt";
         String pathOut3 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputStopklatka TV_3.txt";
-        String pathOut4 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputStopklatka TV_3.txt";
         String finalOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\finalStopklatka TV.txt";
         BufferedReader reader = null;
         BufferedWriter writer = null;
