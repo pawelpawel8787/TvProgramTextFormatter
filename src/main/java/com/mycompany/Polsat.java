@@ -13,6 +13,7 @@ public class Polsat {
         String pathOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputPolsat_1.txt";
         String pathOut2 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputPolsat_2.txt";
         String pathOut3 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputPolsat_3.txt";
+        String pathOut4 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputPolsat_4.txt";
         String finalOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\finalPolsat.txt";
         BufferedReader reader = null;
         BufferedWriter writer = null;
@@ -46,8 +47,10 @@ public class Polsat {
                             .replace(matcher2.group(), "")
 
                     );
-                } else {
+                }
+                else {
                     writer.write(line2
+
                             .replace("", "")
 
                     );
@@ -155,7 +158,7 @@ public class Polsat {
 
         try {
             reader2 = new Scanner(new File(pathOut3));
-            writer2 = new PrintWriter(finalOut);
+            writer2 = new PrintWriter(pathOut4);
 
 
 
@@ -178,6 +181,43 @@ public class Polsat {
                 writer2.close();
             }
 
+        }
+
+        try {
+            reader = new BufferedReader(new FileReader(pathOut4));
+            writer = new BufferedWriter(new FileWriter(finalOut));
+
+            String line2;
+
+            while ((line2 = reader.readLine()) != null) {
+
+
+                if (line2.contains("Disco Gramy")) {
+                    writer.write(line2
+                            .replace(line2, line2 + "\n"));
+                }else if (line2.contains("PONIEDZIAŁEK") || line2.contains("WTOREK") || line2.contains("ŚRODA") || line2.contains("CZWARTEK") || line2.contains("PIĄTEK") || line2.contains("SOBOTA") || line2.contains("NIEDZIELA")) {
+                    System.out.println(line2);
+                    writer.write(line2
+                            .replace(line2, "\t" + line2)
+
+                    );
+                }
+                else {
+                    writer.write(line2
+                            .replace("", ""));
+                }
+                writer.append("\n");
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                reader.close();
+            }
+            if (writer != null) {
+                writer.close();
+            }
         }
 
 

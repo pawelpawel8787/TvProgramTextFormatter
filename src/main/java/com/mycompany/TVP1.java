@@ -226,14 +226,22 @@ public class TVP1 {
 
                 while ((line6 = reader.readLine()) != null) {
                     Pattern pattern = Pattern.compile(", [0-9]{1,3} -");
+                    Pattern pattern2 = Pattern.compile(" [0-9]{1,3}' ");
                     Matcher matcher = pattern.matcher(line6);
+                    Matcher matcher2 = pattern2.matcher(line6);
 
                     if (matcher.find()) {
                         writer.write(line6
                                 .replace(matcher.group(), "")
                                 .replace("- w tym: Teleexpress Poranny:  6:30,7:00,7:30. ", "")
                         );
-                    } else {
+                    } else if (matcher2.find()){
+                        writer.write(line6
+                                .replace(matcher2.group(), "")
+                                .replace("- w tym: Teleexpress Poranny:  6:30,7:00,7:30. ", "")
+                        );
+                    }
+                    else {
                         writer.write(line6
                                 .replace("", "")
                                 .replace("- w tym: Teleexpress Poranny:  6:30,7:00,7:30. ", "")
@@ -266,6 +274,7 @@ public class TVP1 {
                     if (matcher.find()) {
                         writer.write(line7
                                 .replace(matcher.group(), matcher.group().substring(0, matcher.group().length() - 1) + "\t")
+                                .replace("- -", "-")
                         );
                     } else {
                         writer.write(line7

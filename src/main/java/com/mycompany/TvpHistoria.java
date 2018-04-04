@@ -213,12 +213,21 @@ public class TvpHistoria {
 
             while ((line6 = reader.readLine()) != null) {
                 Pattern pattern = Pattern.compile(" [0-9]{4}");
+                Pattern pattern2 = Pattern.compile(" cz. [0-9]{1,4}");
                 Matcher matcher = pattern.matcher(line6);
+                Matcher matcher2 = pattern2.matcher(line6);
 
                 if (matcher.find()) {
                     writer.write(line6
                             .replace(matcher.group(), "," + matcher.group())
                             .replace("- . ", "- " + matcher.group())
+                            .replace("-  -", "-")
+                            .replace(". -", " -")
+                            .replace("-  ", "- ")
+                    );
+                } else if (matcher2.find()) {
+                    writer.write(line6
+                            .replace(matcher2.group(), "")
                             .replace("-  -", "-")
                             .replace(". -", " -")
                             .replace("-  ", "- ")

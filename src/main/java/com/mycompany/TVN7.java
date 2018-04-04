@@ -117,12 +117,14 @@ public class TVN7 {
                             .replace(matcher.group(), "," + matcher.group())
                             .replace(" , ", ", ")
                             .replace(",,", ",")
+                            .replace(" (TVN7 noc)", "")
                     );
                 } else if (matcher2.find()) {
                     writer.write(line3
                             .replace(matcher2.group(), " ")
                             .replace(" , ", ", ")
                             .replace(",,", ",")
+                            .replace(" (TVN7 noc)", "")
                     );
                 }
 
@@ -130,7 +132,9 @@ public class TVN7 {
                     writer.write(line3
                             .replace("", "")
                             .replace(" , ", ", ")
-                            .replace(",,", ","));
+                            .replace(",,", ",")
+                            .replace(" (TVN7 noc)", "")
+                    );
                 }
                 writer.append("\n");
             }

@@ -14,6 +14,7 @@ public class TVPuls {
         String pathOut2 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTV Puls_2.txt";
         String pathOut3 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTV Puls_3.txt";
         String pathOut4 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTV Puls_4.txt";
+        String pathOut5 = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\tempFiles\\outputTV Puls_5.txt";
         String finalOut = "E:\\IdeaProjects\\ProgramObrobkaPlikowTV\\documents\\output\\finalTV Puls.txt";
         BufferedReader reader = null;
         BufferedWriter writer = null;
@@ -139,14 +140,12 @@ public class TVPuls {
                     writer.write(line1
                             .replace(line1, line1.substring(0, 5) + "\t" + "Wikingowie - fabularny")
                     );
-                }else if (line1.contains("Niech żyje")) {
+                } else if (line1.contains("Niech żyje")) {
                     writer.write(line1
                             .replace(line1, line1.substring(0, 5) + "\t" + "Niech żyje król Julian - animacja")
                     );
 
-                }
-
-                else {
+                } else {
                     writer.write(line1
                             .replace("", ""));
                 }
@@ -226,7 +225,7 @@ public class TVPuls {
 
         try {
             reader = new BufferedReader(new FileReader(pathOut4));
-            writer = new BufferedWriter(new FileWriter(finalOut));
+            writer = new BufferedWriter(new FileWriter(pathOut5));
 
             String line2;
 
@@ -242,6 +241,42 @@ public class TVPuls {
                             .replace(matcher4.group(), "")
                     );
                 } else {
+                    writer.write(line2
+                            .replace("", ""));
+                }
+                writer.append("\n");
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                reader.close();
+            }
+            if (writer != null) {
+                writer.close();
+            }
+        }
+
+        try {
+            reader = new BufferedReader(new FileReader(pathOut5));
+            writer = new BufferedWriter(new FileWriter(finalOut));
+
+            String line2;
+
+            while ((line2 = reader.readLine()) != null) {
+
+
+                if (line2.contains("Królowa Serc")) {
+                    writer.write(line2
+                            .replace(line2, line2 + "\n"));
+                } else if (line2.contains("Menu na miarę")) {
+                    writer.write(line2
+                            .replace(line2, line2 + "\n"));
+                }
+
+
+                else {
                     writer.write(line2
                             .replace("", ""));
                 }
